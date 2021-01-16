@@ -60,9 +60,57 @@ class Main {
 
           break;
         case 4:
+          if(estado == true){
+            int boton = 0;
+            int loopTemp = 0;
+            while(loopTemp == 0){
+              try{
+                boton = scan.nextInt();
+                if(boton > 0 && boton < 13){
+                  loopTemp = 1;
+                }else{
+                  loopTemp = 0;
+                }
+              }catch(Exception e){
+              System.out.println("Por favor ingresa un numero correcto.\n\n\n"); 
+              scan.next();
+              continue;
+              }
+            }
+
+            radio.guardar(boton);
+
+          }else{
+            System.out.println("El radio esta apagado. No se puede completar esta accion.\n\n\n");
+          }
 
           break;
         case 5:
+          if(estado == true){
+            int botonTemporal = 0;
+            int loopTemp = 0;
+
+            while(loopTemp == 0){
+              try{
+                botonTemporal = scan.nextInt();
+                if(botonTemporal > 0 && botonTemporal < 13){
+                  loopTemp = 1;
+                }else{
+                  loopTemp = 0;
+                }
+              }catch(Exception e){
+                System.out.println("Por favor ingresa un numero correcto.\n\n\n"); 
+                scan.next();
+                continue;
+              } 
+        
+            }
+            
+            System.out.println(radio.seleccionar(botonTemporal)+"\n\n\n"");
+            
+          }else{
+            System.out.println("El radio esta apagado. No se puede completar esta accion.\n\n\n");
+          }
 
           break;
         case 6:
