@@ -1,19 +1,35 @@
-/*
-Programadores: Stefano Aragoni y Roberto Vallecillos
-Nombre de la clase: Radio.java 
-Lengaje: Java
-Fecha de modificación: 19/01/21
-*/
-
 import java.util.*;
 
-public class Radio implements Interface{
+/**
+*@author Stefano Aragoni y Roberto Vallecillos
+*@Nombre Radio.java 
+*@Lenguaje Java
+*@since 19/01/21
+*/
 
+//A esta clase no se le agrego javadoc a los métodos ya que fueron implementados a traves de la interfaz Interface.  
+
+public class Radio implements Interface{
+  /**
+  *Estado del radio si esta encedido o apagado
+  */
   private boolean estado = false;
+   /**
+  *Estado del radio si esta en emisora AM o FM
+  */
   private boolean emisora = false;
+   /**
+  *Frecuencia actual de la radio.
+  */
   private double estacion = 87.9;
 
+  /**
+  *Frecuencias guardades de la emisora AM, hay 12 espacios por 12 botones.
+  */
   double[] AM = {530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640}; 
+  /**
+  *Frecuencias guardades de la emisora FM, hay 12 espacios por 12 botones.
+  */
   double[] FM = {87.9,88.1,88.3,88.5,88.7,88.9,89.1,89.3,89.5,89.7,89.9, 90.1}; 
 
 

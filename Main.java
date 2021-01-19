@@ -1,13 +1,16 @@
-/*
-Programadores: Stefano Aragoni y Roberto Vallecillos
-Nombre de la clase: Main.java 
-Lengaje: Java
-Fecha de modificación: 19/01/21
+/**
+*@author Stefano Aragoni y Roberto Vallecillos
+*@Nombre Main.java 
+*@Lenguaje Java
+*@since 19/01/21
 */
 
 import java.util.Scanner;
 
 class Main {
+  /**
+  *El método principal, donde se realiza la simulacion de nuestra radio con todos lo que se pidio.
+  */
   public static void main(String[] args) {
     boolean estado = false;
     Scanner scan = new Scanner(System.in);
