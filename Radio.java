@@ -1,10 +1,17 @@
+/*
+Programadores: Stefano Aragoni y Roberto Vallecillos
+Nombre de la clase: Radio.java 
+Lengaje: Java
+Fecha de modificación: 19/01/21
+*/
+
 import java.util.*;
 
 public class Radio implements Interface{
 
-  boolean estado = false;
-  boolean emisora = false;
-  double estacion = 87.9;
+  private boolean estado = false;
+  private boolean emisora = false;
+  private double estacion = 87.9;
 
   double[] AM = {530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640}; 
   double[] FM = {87.9,88.1,88.3,88.5,88.7,88.9,89.1,89.3,89.5,89.7,89.9, 90.1}; 
@@ -37,7 +44,7 @@ public class Radio implements Interface{
       FM[btn-1] = estacion;
 
       String boton = String.valueOf(btn);
-      String emisoraString = String.valueOf(emisora);
+      String emisoraString = String.valueOf(estacion);
 
       message = "El boton "+boton+"ha guardado la emisora "+emisoraString+" FM.";
 
@@ -46,9 +53,9 @@ public class Radio implements Interface{
       AM[btn-1] = estacion;
 
       String boton = String.valueOf(btn);
-      String emisoraString = String.valueOf(emisora);
+      String emisoraString = String.valueOf(estacion);
 
-      message = "El boton "+boton+"ha guardado la emisora "+emisoraString+" AM.";
+      message = "El boton "+boton+" ha guardado la emisora "+emisoraString+" AM.";
 
     }
     return message;
@@ -60,11 +67,11 @@ public class Radio implements Interface{
     if (emisora == false){
       estacion = FM[btn-1];
 
-      message = "Ha seleccioned el boton " + String.valueOf(btn) + " con la emisora " + String.valueOf(estacion) + " FM."; 
+      message = "Ha seleccionado el boton " + String.valueOf(btn) + " con la emisora " + String.valueOf(estacion) + " FM."; 
     }else{
       estacion = AM[btn-1];
 
-      message = "Ha seleccioned el boton " + String.valueOf(btn) + " con la emisora " + String.valueOf(estacion) + " AM."; 
+      message = "Ha seleccionado el boton " + String.valueOf(btn) + " con la emisora " + String.valueOf(estacion) + " AM."; 
 
     }
   
@@ -74,7 +81,7 @@ public class Radio implements Interface{
 
   public double avanzar(){
     if (emisora == false){
-      estacion += 0.2;
+      estacion = (estacion * 10 + 2)/10;
       if (estacion > 107.9){
         estacion = 87.9;
       }

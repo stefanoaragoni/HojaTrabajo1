@@ -1,3 +1,9 @@
+/*
+Programadores: Stefano Aragoni y Roberto Vallecillos
+Nombre de la clase: Main.java 
+Lengaje: Java
+Fecha de modificación: 19/01/21
+*/
 
 import java.util.Scanner;
 
@@ -11,7 +17,7 @@ class Main {
 
     while(loop == 1){
 
-      System.out.println("-Simulacion de Carro-\nQue desea hacer?");
+      System.out.println("-Simulacion de Radio-\nQue desea hacer?");
       System.out.println("1.Encender el radio \n2.Cambiar de AM a FM a AM \n3.Avanzar en el dial de las emisoras. \n4.Guardar emisora \n5.Seleccionar emisora de un boton \n6.Apagar el radio"); 
 
       System.out.println("Por favor ingrese el numero de la accion a realizar");
@@ -59,11 +65,13 @@ class Main {
           }
 
           break;
+
         case 4:
           if(estado == true){
             int boton = 0;
             int loopTemp = 0;
             while(loopTemp == 0){
+              System.out.println("\nEn que boton desea guardar la emisora actual? (1-12)");
               try{
                 boton = scan.nextInt();
                 if(boton > 0 && boton < 13){
@@ -78,7 +86,7 @@ class Main {
               }
             }
 
-            radio.guardar(boton);
+            System.out.println("\n"+radio.guardar(boton) + "\n\n\n");
 
           }else{
             System.out.println("El radio esta apagado. No se puede completar esta accion.\n\n\n");
@@ -91,6 +99,7 @@ class Main {
             int loopTemp = 0;
 
             while(loopTemp == 0){
+               System.out.println("\nEn que boton se encuentra la emisora que desea? (1-12)");
               try{
                 botonTemporal = scan.nextInt();
                 if(botonTemporal > 0 && botonTemporal < 13){
@@ -106,7 +115,7 @@ class Main {
         
             }
             
-            System.out.println(radio.seleccionar(botonTemporal)+"\n\n\n"");
+            System.out.println("\n"+radio.seleccionar(botonTemporal)+"\n\n\n");
             
           }else{
             System.out.println("El radio esta apagado. No se puede completar esta accion.\n\n\n");
