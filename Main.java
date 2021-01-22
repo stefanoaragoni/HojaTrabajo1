@@ -12,19 +12,23 @@ class Main {
   *El método principal, donde se realiza la simulacion de nuestra radio con todos lo que se pidio.
   */
   public static void main(String[] args) {
+    //declaracion de propiedades
     boolean estado = false;
     Scanner scan = new Scanner(System.in);
     int loop = 1;
 
     Radio radio = new Radio();
 
+    //inicio de sistema
     while(loop == 1){
 
+      //menu principal
       System.out.println("-Simulacion de Radio-\nQue desea hacer?");
       System.out.println("1.Encender el radio \n2.Cambiar de AM a FM a AM \n3.Avanzar en el dial de las emisoras. \n4.Guardar emisora \n5.Seleccionar emisora de un boton \n6.Apagar el radio"); 
 
       System.out.println("Por favor ingrese el numero de la accion a realizar");
 
+      //pide la accion a realizar
       int opcion = 0;
       while(opcion == 0){
         try{
@@ -37,7 +41,9 @@ class Main {
         
       }
 
+      //switch del menu
       switch(opcion){
+        //encender radio
         case 1:
           if(estado == true){
             System.out.println("El radio ya esta encendido.\n\n\n"); 
@@ -46,6 +52,7 @@ class Main {
             System.out.println("Se ha encendido el radio.\n\n\n");
           }
           break;
+        //cambiar de am a fm y vice versa
         case 2:
           if(estado == true){
             boolean tipo = radio.amFm();
@@ -59,6 +66,7 @@ class Main {
             System.out.println("El radio esta apagado. No se puede completar esta accion.\n\n\n"); 
           }
           break;
+        //avanzar la emisora
         case 3:
           if(estado == true){
             double estacion = radio.avanzar();
@@ -68,7 +76,7 @@ class Main {
           }
 
           break;
-
+        //guardar emisora en boton
         case 4:
           if(estado == true){
             int boton = 0;
@@ -94,8 +102,8 @@ class Main {
           }else{
             System.out.println("El radio esta apagado. No se puede completar esta accion.\n\n\n");
           }
-
           break;
+        //acceder a emisora mediante boton
         case 5:
           if(estado == true){
             int botonTemporal = 0;
@@ -123,8 +131,8 @@ class Main {
           }else{
             System.out.println("El radio esta apagado. No se puede completar esta accion.\n\n\n");
           }
-
           break;
+        //apagar radio
         case 6:
           if(estado == true){
             estado = radio.encenderApagar();

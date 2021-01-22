@@ -6,6 +6,7 @@
 */
 
 public interface Interface{
+  //interface que predetermina los metodos de radio
   /**
   *Este metedo es para poder encender y apagar la radio
   *

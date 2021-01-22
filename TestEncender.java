@@ -5,6 +5,7 @@
 *@since 19/01/21
 */
 
+//prueba JUnit 3
 import static org.junit.Assert.*;
 
 import org.junit.Test;

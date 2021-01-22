@@ -10,6 +10,7 @@ import java.util.*;
 //A esta clase no se le agrego javadoc a los métodos ya que fueron implementados a traves de la interfaz Interface.  
 
 public class Radio implements Interface{
+  //se indican las propieddades de la clase
   /**
   *Estado del radio si esta encedido o apagado
   */
@@ -32,7 +33,7 @@ public class Radio implements Interface{
   */
   double[] FM = {87.9,88.1,88.3,88.5,88.7,88.9,89.1,89.3,89.5,89.7,89.9, 90.1}; 
 
-
+  //se enciende o apaga el radio
   public boolean encenderApagar(){
     if(estado == false){
       estado = true;
@@ -42,6 +43,7 @@ public class Radio implements Interface{
     return estado;
   }
 
+  //se pasa de am a fm y de regreso
   public boolean amFm(){
     if(emisora == false){
       emisora = true;
@@ -54,6 +56,7 @@ public class Radio implements Interface{
 
   }
 
+  //se guarda una emisora en los botones
   public String guardar(int btn){
     String message = "";
     if(emisora == false){ //FM
@@ -78,6 +81,7 @@ public class Radio implements Interface{
 
   }
 
+  //se selecciona una emisora de un boton
   public String seleccionar(int btn){
     String message = "";
     if (emisora == false){
@@ -95,6 +99,7 @@ public class Radio implements Interface{
 
   }
 
+  //se avanza de estacion
   public double avanzar(){
     if (emisora == false){
       estacion = (estacion * 10 + 2)/10;
